@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Beacon Tailwind</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/build/tailwind.css">
+        <link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+    </head>
+    <body class="font-muli">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js" defer></script>
+
+<!-- Start header navigation and logo inc mobile -->
+
+<nav x-data="{ open: true }" class="bg-slate-600">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
+      <div class="flex justify-between h-16">
+        <div class="flex">
+          <div class="-ml-2 mr-2 flex items-center md:hidden">
+            <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out">
+              <svg :class="{'hidden': open, 'block': !open }" class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+              <svg :class="{'hidden': !open, 'block': open }" class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+          </div>
+          <div class="flex-shrink-0 flex items-center">
+            <a href="index.html">
+            <img class="block lg:hidden h-8 w-auto" src="/img/logos/Door4-Grey.svg" alt="" />
+            <img class="hidden lg:block h-8 w-auto" src="/img/logos/Door4-Grey.svg" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <div class="hidden md:mr-6 md:flex md:items-center">
+              <a href="services-index.html" class="px-3 py-2 rounded-md text-base font-medium leading-5 text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">What we do</a>
+              <a href="work-index.html" class="ml-4 px-3 py-2 rounded-md text-base font-medium leading-5 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Our work</a>
+              <a href="blog-index.html" class="ml-4 px-3 py-2 rounded-md text-base font-medium leading-5 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Decoding Digital</a>
+          </div>
+          <div class="flex-shrink-0">
+            <span class="rounded-md shadow-sm">
+              <button type="button" class="relative inline-flex items-center px-4 py-2 border border-transparent text-base leading-5 font-bold rounded-md text-slate-500 bg-homer-500 hover:bg-homer-400 focus:outline-none focus:shadow-outline-homer focus:border-homer-600 active:bg-indigo-600 transition duration-150 ease-in-out">
+                <span>Enquire now</span>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div :class="{'block': open, 'hidden': !open}" class="hidden md:hidden">
+      <div class="px-2 pt-2 pb-3 sm:px-3">
+        <a href="services-index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">What we do</a>
+        <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Our work</a>
+        <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Decoding Digital</a>
+      </div>
+    </div>
+  </nav>
+
+<!-- End navigation-->
+
+<!-- Start Hero introduction -->
+
+<div class="bg-scroll p-10 mx-auto max-w-full px-4 sm:mt-0 sm:px-20 md:mt-0 lg:mt-0 xl:mt-0" >
+
+<!-- Breadcrumb -->
+
+<div class="relative max-w-screen-xl mx-auto lg:px-8">
+    <nav class="sm:hidden">
+      <a href="#" class="flex items-center text-sm leading-5 font-medium text-gray-400 hover:text-gray-200 focus:outline-none focus:underline transition duration-150 ease-in-out">
+        <svg class="flex-shrink-0 -ml-1 mr-1 h-5 w-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+        </svg>
+        Back
+      </a>
+    </nav>
+    <nav class="hidden sm:flex items-center text-sm leading-5 font-medium">
+      <a href="index.html" class="text-gray-400 hover:text-gray-200 focus:outline-none focus:underline transition duration-150 ease-in-out">Home</a>
+      <svg class="flex-shrink-0 mx-2 h-5 w-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+      </svg>
+      <a href="services-index.html" class="text-gray-400 hover:text-gray-200 focus:outline-none focus:underline transition duration-150 ease-in-out">What we do</a>
+    </nav>
+  </div>
+
+<!-- End Breadcrumb -->
+
+
+  <div class="relative max-w-screen-xl grid grid-cols-2 mx-auto px-4 sm:px-6 lg:p-16">
+      <div class="text-left pr-12">
+        <h2 class="text-2xl tracking-tight pb-4 leading-10 font-extrabold text-slate-600 sm:text-2xl sm:leading-none md:text-4xl">
+            Scalable success for performance brands
+        </h2>
+        <p class="mt-3 text-lg leading-7 text-slate-600 font-semibold">
+            Door4's performance program - REACH, CONVERT, SCALE - means more customers. It means expansion into new territories. It means higher average order values, repeat customer rates and lifetime order values. Faster and more reliable customer experiences. Operational time saving. Measurable outcomes. For a start.
+        </p>
+        <p class="mt-3 text-base leading-7 text-slate-600">
+            If your business relies on sales and leads, you must exploit data and insights to thrive. Working with Door4 as your performance digital partner will keep your eyes on the prize and free you to be innovative and creative.
+            We help you target success using REACH, CONVERT and SCALE, data-led approaches that start with a measurement plan and deliver quantifiable commercial benefits.
+        </p>      
+      </div>
+      <div class="lg:px-20">
+          <div class="bg-homer-100 rounded-full">
+          <img class="object-center p-12" src="img/services/cro-and-testing.svg" alt="" />
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- End Hero introduction -->
+
+
+<!-- Services centered and list block component -- REACH -->
+
+<div class="py-2 bg-gray-100 lg:py-2 text-center">
+        <div class="relative max-w-screen-xl mx-auto px-4 sm:px-6">
+      
+            <div class="relative mt-12 lg:mt-2 lg:gap-8 p-6 lg:items-center">
+                <!-- Introduction para -->
+          
+              <div class="relative">
+              <h4 class="text-base leading-5 font-extrabold tracking-wider text-barton-600 uppercase">
+              Reach
+              </h4>
+              <h4 class="text-2xl leading-8 font-extrabold text-slate-500 tracking-tight sm:text-3xl sm:leading-9">
+                Connect with your ideal customers
+              </h4>
+              <p class="mt-3 text-lg max-w-3xl leading-7 text-slate-400 font-semibold lg:mx-auto">
+                  We place your brand in front of the right people at crucial stages of the purchasing journey, using data-driven marketing strategies.
+              </p>
+              <p class="mt-3 max-w-3xl leading-7 text-slate-400 lg:mx-auto">
+                  Our strategies drive relevant traffic to your website by creating a direct response and action. We utilise key data (macro and micro) to inform our plans so we carry on hitting your targets.
+                  Your REACH objectives are measurable, so your decisions can be justified with data like brand awareness, traffic levels, ad interactions, social engagement and impressions.
+              </p>
+              
+            </div>    
+            
+      
+            <div class="mt-10 -mx-4 relative lg:mt-0">
+            </div>
+          </div>
+      
+          <div>
+              <div class="relative pt-2 pb-20 px-4 sm:px-6 lg:pt-2 lg:pb-2 lg:px-8">
+
+                <div class="relative max-w-7xl mx-auto">
+
+                  <!-- Row one -->
+
+                  <div class="grid gap-5 mx-auto md:grid-cols-3 lg:grid-cols-3 lg:max-w-none">
+
+                  <!-- Sub page cards   -->
+                  <div class="flex flex-col rounded-lg bg-slate-500 shadow-lg overflow-hidden align-middle items-center p-8">
+                      <div class="flex-shrink-0">
+                        <div class="bg-barton-500 rounded-full w-24">
+                        <img class="h-24 object-scale-down p-4" src="img/services/paid-search.svg" alt="" />
+                      </div>
+                      </div>
+                      <div class="flex-1 p-2 pt-6 flex flex-col justify-between">
+                        <div class="flex-1">
+                          <p class="text-lg leading-snug text-center font-bold text-barton-500">
+                            <a href="#" class="hover:underline">
+                              Paid Search
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="flex flex-col rounded-lg bg-slate-500 shadow-lg overflow-hidden align-middle items-center p-8">
+                        <div class="flex-shrink-0">
+                          <div class="bg-barton-500 rounded-full w-24">
+                          <img class="h-24 object-scale-down p-4" src="img/services/paid-social.svg" alt="" />
+                        </div>
+                        </div>
+                        <div class="flex-1 p-2 pt-6 flex flex-col justify-between">
+                          <div class="flex-1">
+                            <p class="text-lg leading-snug text-center font-bold text-barton-500">
+                              <a href="#" class="hover:underline">
+                                Paid Social
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                  </div>
+
+                  <div class="flex flex-col rounded-lg bg-slate-500 shadow-lg overflow-hidden align-middle items-center p-8">
+                      <div class="flex-shrink-0">
+                        <div class="bg-barton-500 rounded-full w-24">
+                        <img class="h-24 object-scale-down p-4" src="img/services/orgainic-search.svg" alt="" />
+                      </div>
+                      </div>
+                      <div class="flex-1 p-2 pt-6 flex flex-col justify-between">
+                        <div class="flex-1">
+                          <p class="text-lg leading-snug text-center font-bold text-barton-500">
+                            <a href="services-organic-search.html" class="hover:underline">
+                              Organic Search
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                </div>
+                    
+                  
+
+                    
+                  </div>
+                </div>
+                
+              </div>
+
+            </div>
+
+      
+          
+        </div>
+</div>
+
+<!-- Services centered and list block component -->
+
+
+<!-- Services centered and list block component -- CONVERT -->
+
+<div class="py-2 bg-gray-100 overflow-hidden lg:py-2 text-center">
+    <div class="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+  
+        <div class="relative mt-12 lg:mt-2 lg:gap-8 p-6 lg:items-center">
+            <!-- Introduction para -->
+      
+          <div class="relative">
+              <h4 class="text-base leading-5 font-extrabold tracking-wider text-pendle-600 uppercase">
+                Convert
+              </h4>
+              <h4 class="text-2xl leading-8 font-extrabold text-slate-500 tracking-tight sm:text-3xl sm:leading-9">
+              Use data to improve your bottom line
+              </h4>
+              <p class="mt-3 text-lg max-w-3xl leading-7 text-slate-400 font-semibold lg:mx-auto">
+                  We challenge your website to be the best it can by responding to changing customer needs through continuous experimentation.
+              </p>
+              <p class="mt-3 max-w-3xl leading-7 text-slate-400 lg:mx-auto">
+                  We'll push it to its limits and make it work harder using a comprehensive data-led approach of testing and iteration, which is proven to increase conversion rates and customer value.
+                  Your CONVERT objectives are measurable, so your decisions can be justified with data like conversion rates, average order values, repeat customer rates, lifetime order values.
+              </p>
+          </div>
+  
+        <div class="mt-10 -mx-4 relative lg:mt-0">
+        </div>
+      </div>
+  
+      <div>
+          <div class="relative pt-2 pb-20 px-4 sm:px-6 lg:pt-2 lg:pb-2 lg:px-8">
+
+            <div class="relative max-w-7xl mx-auto">
+
+              <!-- Row one -->
+
+              <div class="grid gap-5 mx-auto md:grid-cols-3 lg:grid-cols-3 lg:max-w-none">
+
+              <!-- Sub page cards   -->
+              <div class="flex flex-col rounded-lg bg-slate-500 shadow-lg overflow-hidden align-middle items-center p-8">
+                  <div class="flex-shrink-0">
+                    <div class="bg-pendle-500 rounded-full w-24">
+                    <img class="h-24 object-scale-down p-4" src="img/services/cro-and-testing.svg" alt="" />
+                  </div>
+                  </div>
+                  <div class="flex-1 p-2 pt-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                      <p class="text-lg leading-snug text-center font-bold text-pendle-500">
+                        <a href="#" class="hover:underline">
+                          Conversion Rate Optimisation (CRO)
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="flex flex-col rounded-lg bg-slate-500 shadow-lg overflow-hidden align-middle items-center p-8">
+                    <div class="flex-shrink-0">
+                      <div class="bg-pendle-500 rounded-full w-24">
+                      <img class="h-24 object-scale-down p-4" src="img/services/user-research.svg" alt="" />
+                    </div>
+                    </div>
+                    <div class="flex-1 p-2 pt-6 flex flex-col justify-between">
+                      <div class="flex-1">
+                        <p class="text-lg leading-snug text-center font-bold text-pendle-500">
+                          <a href="#" class="hover:underline">
+                            User Research, Analysis  & Planning
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+              </div>
+
+              <div class="flex flex-col rounded-lg bg-slate-500 shadow-lg overflow-hidden align-middle items-center p-8">
+                  <div class="flex-shrink-0">
+                    <div class="bg-pendle-500 rounded-full w-24">
+                    <img class="h-24 object-scale-down p-4" src="img/services/site-speed-audit.svg" alt="" />
+                  </div>
+                  </div>
+                  <div class="flex-1 p-2 pt-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                      <p class="text-lg leading-snug text-center font-bold text-pendle-500">
+                        <a href="#" class="hover:underline">
+                          Site Speed Audit, Monitoring &amp; Optimisation
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+            </div>
+                
+              
+
+                
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+
+  
+      
+    </div>
+</div>
+
+<!-- Services centered and list block component -->
+
+
+<!-- Services centered and list block component -- SCALE -->
+
+<div class="py-2 bg-gray-100 overflow-hidden lg:py-2 text-center">
+    <div class="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+  
+      <div class="relative mt-12 lg:mt-2 lg:gap-8 p-6 lg:items-center">
+      <!-- Introduction para -->
+
+        <div class="relative">
+            <h4 class="text-base leading-5 font-extrabold tracking-wider text-dyche-600 uppercase">
+                Scale
+              </h4>
+          <h4 class="text-2xl leading-8 font-extrabold text-slate-500 tracking-tight sm:text-3xl sm:leading-9">
+              Connect with your ideal customers
+          </h4>
+          <p class="mt-3 text-lg leading-7 text-slate-400 font-semibold max-w-3xl lg:mx-auto">
+              We place your brand in front of the right people at crucial stages of the purchasing journey, using data-driven marketing strategies.
+          </p>
+          <p class="mt-4 max-w-3xl text-slate-400 lg:mx-auto">
+              Our strategies drive relevant traffic to your website by creating a direct response and action. We utilise key data (macro and micro) to inform our plans so we carry on hitting your targets.
+              Your REACH objectives are measurable, so your decisions can be justified with data like brand awareness, traffic levels, ad interactions, social engagement and impressions.
+          </p>
+          
+        </div>
+  
+        <div class="mt-10 -mx-4 relative lg:mt-0">
+        </div>
+      </div>
+  
+      <div>
+          <div class="relative pt-2 pb-20 px-4 sm:px-6 lg:pt-2 lg:pb-2 lg:px-8">
+
+            <div class="relative max-w-7xl mx-auto">
+
+              <!-- Row one -->
+
+              <div class="grid gap-5 mx-auto md:grid-cols-3 lg:grid-cols-3 lg:max-w-none">
+
+              <!-- Sub page cards   -->
+              <div class="flex flex-col rounded-lg bg-slate-500 shadow-lg overflow-hidden align-middle items-center p-8">
+                  <div class="flex-shrink-0">
+                    <div class="bg-dyche-500 rounded-full w-24">
+                    <img class="h-24 object-scale-down p-4" src="img/services/building-and-improving-websites.svg" alt="" />
+                  </div>
+                  </div>
+                  <div class="flex-1 p-2 pt-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                      <p class="text-lg leading-snug text-center font-bold text-dyche-500">
+                        <a href="#" class="hover:underline">
+                            Web Development
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="flex flex-col rounded-lg bg-slate-500 shadow-lg overflow-hidden align-middle items-center p-8">
+                    <div class="flex-shrink-0">
+                      <div class="bg-dyche-500 rounded-full w-24">
+                      <img class="h-24 object-scale-down p-4" src="img/services/user-design-arch.svg" alt="" />
+                    </div>
+                    </div>
+                    <div class="flex-1 p-2 pt-6 flex flex-col justify-between">
+                      <div class="flex-1">
+                        <p class="text-lg leading-snug text-center font-bold text-dyche-500">
+                          <a href="#" class="hover:underline">
+                            User-Centric Design and Architecture
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+              </div>
+
+              <div class="flex flex-col rounded-lg bg-slate-500 shadow-lg overflow-hidden align-middle items-center p-8">
+                  <div class="flex-shrink-0">
+                    <div class="bg-dyche-500 rounded-full w-24">
+                    <img class="h-24 object-scale-down p-4" src="img/services/platform-integrations.svg" alt="" />
+                  </div>
+                  </div>
+                  <div class="flex-1 p-2 pt-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                      <p class="text-lg leading-snug text-center font-bold text-dyche-500">
+                        <a href="#" class="hover:underline">
+                            E-commerce Platform Integrations
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+              </div>
+
+
+              <div class="flex flex-col rounded-lg bg-slate-500 shadow-lg overflow-hidden align-middle items-center p-8">
+                  <div class="flex-shrink-0">
+                    <div class="bg-dyche-500 rounded-full w-24">
+                    <img class="h-24 object-scale-down p-4" src="img/services/cross-territory-capability.svg" alt="" />
+                  </div>
+                  </div>
+                  <div class="flex-1 p-2 pt-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                      <p class="text-lg leading-snug text-center font-bold text-dyche-500">
+                        <a href="#" class="hover:underline">
+                            E-commerce Cross-Territory Capability
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+              </div>
+
+
+              <div class="flex flex-col rounded-lg bg-slate-500 shadow-lg overflow-hidden align-middle items-center p-8">
+                  <div class="flex-shrink-0">
+                    <div class="bg-dyche-500 rounded-full w-24">
+                    <img class="h-24 object-scale-down p-4" src="img/services/multi-channel-integrations.svg" alt="" />
+                  </div>
+                  </div>
+                  <div class="flex-1 p-2 pt-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                      <p class="text-lg leading-snug text-center font-bold text-dyche-500">
+                        <a href="#" class="hover:underline">
+                            E-commerce Multi-Channel Integrations
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+              </div>
+
+
+              <div class="flex flex-col rounded-lg bg-slate-500 shadow-lg overflow-hidden align-middle items-center p-8">
+                  <div class="flex-shrink-0">
+                    <img class="h-24 object-scale-down p-4" src="img/logos/Door4-Grey.svg" alt="" />
+                  </div>
+                  <p class="text-lg text-white">Your partner for growth</p>
+                  <div class="flex-1 p-2 pt-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                        <span class="rounded-md shadow-sm">
+                            <button type="button" class="relative inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-extrabold rounded-md text-slate-500 bg-white hover:bg-homer-400 focus:outline-none focus:shadow-outline-homer focus:border-homer-600 active:bg-indigo-600 transition duration-150 ease-in-out">
+                              <span>Contact us today</span>
+                            </button>
+                          </span>
+                        </p>
+                    </div>
+                  </div>
+              </div>
+                
+              
+
+                
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+
+  
+      
+    </div>
+</div>
+
+<!-- Services centered and list block component -->
+
+
+
+<!-- Service Commitment block -->
+
+<div class="py-12 bg-white">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:text-center">
+        <p class="text-base leading-6 text-dyche-600 font-extrabold tracking-wide uppercase">Our service commitment</p>
+        <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+          Appropriate resources & communication
+        </h3>
+        <p class="mt-4 max-w-2xl text-xl leading-7 text-slate-500 lg:mx-auto">
+            We collaborate with you to achieve results. We support this process with solid resources, effective communications, tested  processes and a proactive attitude.
+        </p>
+      </div>
+  
+      <div class="mt-10 lg:px-8">
+        <ul class="md:grid md:grid-cols-2 md:col-gap-8 md:row-gap-10">
+          <li>
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-slate-500 text-homer-500">
+                  <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h5 class="text-lg leading-6 font-medium text-slate-900">Dedicated Account Manager & Project Manager</h5>
+                <p class="mt-2 text-base leading-6 text-slate-400">
+                    Twice the resource, which brings the most appropriate skills on board your project and keeps everything focused on your objectives
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="mt-10 md:mt-0">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-slate-500 text-homer-500">
+                  <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h5 class="text-lg leading-6 font-medium text-slate-900">Regular communications and meetings</h5>
+                <p class="mt-2 text-base leading-6 text-slate-400">
+                    We’ll agree the best channels from the whole array, from Slack to email to Skyping to face-to-face, and frequency of updates
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="mt-10 md:mt-0">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-slate-500 text-homer-500">
+                  <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h5 class="text-lg leading-6 font-medium text-slate-900">Clear agreements</h5>
+                <p class="mt-2 text-base leading-6 text-slate-400">
+                    We’ll agree a Measurement Plan and Statement of Works. First, you’ll know what to expect from us and fully understand the outcomes we’ll deliver. Second, you’ll know what we expect from you: collaboration, input and commitment
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="mt-10 md:mt-0">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-slate-500 text-homer-500">
+                  <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h5 class="text-lg leading-6 font-medium text-slate-900">Challenge</h5>
+                <p class="mt-2 text-base leading-6 text-slate-400">
+                    It’s also our role to challenge you to see, think and do things differently. What we do is truly transformative - your business will never be the same. 
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+<!-- End Service Commitment block -->
+
+
+
+<!-- Global page call to action -->
+
+<div class="bg-homer-200">
+    <div class="max-w-screen-xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+      <h2 class="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+        Ready to work together?
+        <br />
+        Get in touch with our team today
+      </h2>
+      <div class="mt-8 flex justify-center">
+        <div class="inline-flex rounded-md shadow">
+          <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-dyche-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+            Contact the team
+          </a>
+        </div>
+        <div class="ml-3 inline-flex">
+          <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-dyche-700 bg-slate-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out">
+            View our projects
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- End global call to action -->
+
+
+<!--Footer-->
+
+    <div class="bg-slate-600 border-t-2 border-slate-600">
+      <div class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div class="xl:col-span-1">
+            <img class="h-10" src="/img/logos/Door4-FFEA00.svg" alt="Company name" />
+            <p class="mt-4 text-gray-200 text-base leading-6">
+                Making good things happen since 2000.
+            </p>
+            <div class="mt-8 flex">
+              <a href="#" class="text-gray-400 hover:text-gray-500">
+                <span class="sr-only">Facebook</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+              <a href="#" class="ml-6 text-gray-400 hover:text-gray-500">
+                <span class="sr-only">Instagram</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+              <a href="#" class="ml-6 text-gray-400 hover:text-gray-500">
+                <span class="sr-only">Twitter</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h4 class="text-sm leading-5 font-extrabold tracking-wider text-barton-600 uppercase">
+                  Reach
+                </h4>
+                <ul class="mt-4">
+                  <li>
+                    <a href="#" class="text-base leading-6 text-slate-400 hover:text-barton-500">
+                      Paid Search
+                    </a>
+                  </li>
+                  <li class="mt-4">
+                    <a href="#" class="text-base leading-6 text-slate-400 hover:text-barton-500">
+                      Paid Social
+                    </a>
+                  </li>
+                  <li class="mt-4">
+                    <a href="#" class="text-base leading-6 text-slate-400 hover:text-barton-500">
+                      Organic Search
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-12 md:mt-0">
+                <h4 class="text-sm leading-5 font-extrabold tracking-wider text-pendle-600 uppercase">
+                  Convert
+                </h4>
+                <ul class="mt-4">
+                  <li>
+                      <a href="#" class="text-base leading-6 text-slate-400 hover:text-pendle-500">
+                      Conversion Rate Optimisation (CRO)
+                    </a>
+                  </li>
+                  <li class="mt-4">
+                      <a href="#" class="text-base leading-6 text-slate-400 hover:text-pendle-500">
+                      User Research, Analysis & Planning
+                    </a>
+                  </li>
+                  <li class="mt-4">
+                      <a href="#" class="text-base leading-6 text-slate-400 hover:text-pendle-500">
+                      Site Speed Audit, Monitoring & Optimisation
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h4 class="text-sm leading-5 font-extrabold tracking-wider text-dyche-600 uppercase">
+                  Scale
+                </h4>
+                <ul class="mt-4">
+                  <li>
+                      <a href="#" class="text-base leading-6 text-slate-400 hover:text-dyche-500">
+                    Web Development
+                    </a>
+                  </li>
+                  <li class="mt-4">
+                      <a href="#" class="text-base leading-6 text-slate-400 hover:text-dyche-500">
+                    User-Centric Design and Architecture
+                    </a>
+                  </li>
+                  <li class="mt-4">
+                      <a href="#" class="text-base leading-6 text-slate-400 hover:text-dyche-500">
+                    E-commerce Platform Integrations
+                    </a>
+                  </li>
+                  <li class="mt-4">
+                      <a href="#" class="text-base leading-6 text-slate-400 hover:text-dyche-500">
+                    E-commerce Cross-Territory Capability                      
+                    </a>
+                  </li>
+                  <li class="mt-4">
+                      <a href="#" class="text-base leading-6 text-slate-400 hover:text-dyche-500">
+                      E-commerce Multi-Channel Integrations
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-12 md:mt-0">
+                <h4 class="text-sm leading-5 font-extrabold tracking-wider text-gray-400 uppercase">
+                  Company
+                </h4>
+                <ul class="mt-4">
+                  <li>
+                      <a href="#" class="text-base leading-6 text-slate-400 hover:text-homer-500">
+                      Our Work
+                    </a>
+                  </li>
+                  <li class="mt-4">
+                      <a href="#" class="text-base leading-6 text-slate-400 hover:text-homer-500">
+                        Decoding Digital
+                    </a>
+                  </li>
+                  <li class="mt-4">
+                      <a href="#" class="text-base leading-6 text-slate-400 hover:text-homer-500">
+                        Contact us
+                    </a>
+                  </li>
+                  <li class="mt-4">
+                      <a href="#" class="text-base leading-6 text-slate-400 hover:text-homer-500">
+                          Workshops
+                      </a>
+                    </li>
+                    <li class="mt-4">
+                        <a href="#" class="text-base leading-6 text-slate-400 hover:text-homer-500">
+                            Cookie Policy
+                        </a>
+                      </li>
+                      <li class="mt-4">
+                          <a href="#" class="text-base leading-6 text-slate-400 hover:text-homer-500">
+                              Privacy Policy
+                          </a>
+                        </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 border-t border-homer-700 pt-8">
+          <p class="text-base leading-6 text-gray-400 xl:text-center">
+            &copy; 2020 Door4.
+          </p>
+        </div>
+      </div>
+    </div>
+
+<!--End Footer-->
+
+    </body>
+</html>

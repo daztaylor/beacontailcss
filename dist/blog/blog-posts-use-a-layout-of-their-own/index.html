@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Blog posts use a layout of their own</title>
+
+  </head>
+  <body class="container mx-auto mb-12 lg:max-w-4xl text-gray-700">
+    
+<header>
+  
+  <h1 class=" text-white font-medium text-2xl"><a href="/">ElevenTail <small class="text-sm">a site scaffold</small></a></h1>
+  
+  <nav>
+    
+    <!--
+<ul class="flex items-row">
+  
+    <li class="pr-1">
+      <a href="/about" class="nav-tab">
+        About
+      </a>
+    </li>
+  
+    <li class="pr-1">
+      <a href="/blog" class="nav-tab">
+        Rollout plan
+      </a>
+    </li>
+  
+    <li class="pr-1">
+      <a href="/blog" class="nav-tab">
+        Check postcode
+      </a>
+    </li>
+  
+    <li class="pr-1">
+      <a href="/blog" class="nav-tab">
+        FAQs
+      </a>
+    </li>
+  
+    <li class="pr-1">
+      <a href="/blog" class="nav-tab">
+        News
+      </a>
+    </li>
+  
+    <li class="pr-1">
+      <a href="/blog" class="nav-tab">
+        Contact
+      </a>
+    </li>
+  
+</ul>
+-->
+
+<nav x-data="{ open: false }" class="bg-slate-600">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
+      <div class="flex justify-between h-16">
+        <div class="flex">
+          <div class="-ml-2 mr-2 flex items-center md:hidden">
+            <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out">
+              <svg :class="{'hidden': open, 'block': !open }" class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+              <svg :class="{'hidden': !open, 'block': open }" class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+          </div>
+          <div class="flex-shrink-0 flex items-center">
+            <a href="/index.html">
+            <img class="block lg:hidden h-8 w-auto" src="/img/logos/Door4-Grey.svg" alt="" />
+            <img class="hidden lg:block h-8 w-auto" src="/img/logos/Door4-Grey.svg" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <div class="hidden md:mr-6 md:flex md:items-center">
+                <!-- Mega menu -->
+                <span>Solutions</span>
+                <!-- Item active: "text-gray-600", Item inactive: "text-gray-400" -->
+                <svg class="text-gray-400 h-5 w-5 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>  
+                <a href="/services/index.html" class="px-3 py-2 rounded-md text-base font-medium leading-5 text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">What we do</a>
+                <a href="/work/index.html" class="ml-4 px-3 py-2 rounded-md text-base font-medium leading-5 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Our work</a>
+                <a href="/blog/index.html" class="ml-4 px-3 py-2 rounded-md text-base font-medium leading-5 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Decoding Digital</a>
+            </div>           
+        </div>
+        <div class="flex items-center">
+              <span class="rounded-md shadow-sm">
+                <button type="button" class="relative inline-flex items-center px-4 py-2 border border-transparent text-base leading-5 font-bold rounded-md text-slate-500 bg-homer-500 hover:bg-homer-400 focus:outline-none focus:shadow-outline-homer focus:border-homer-600 active:bg-indigo-600 transition duration-150 ease-in-out">
+                  <span>Enquire now</span>
+                </button>
+              </span>
+            </div>
+      </div>
+    </div>
+  
+    <div :class="{'block': open, 'hidden': !open}" class="hidden md:hidden">
+      <div class="px-2 pt-2 pb-3 sm:px-3">
+        <a href="services-index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">What we do</a>
+        <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Our work</a>
+        <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Decoding Digital</a>
+      </div>
+    </div>
+  </nav>
+
+<!-- End navigation-->
+  </nav>
+</header>
+
+
+
+
+    <div class="content leading-relaxed">
+      <section>
+  <time value="" class="text-gray-600">December 31, 2019</time>
+  <h1 class="heading">Blog posts use a layout of their own</h1>
+  <div class="mb-4 text-lg font-medium">
+    <p>All files in the blog folder get the same meta data for things like their template language, tags thy should share and the layout they should use.</p>
+  </div>
+  <div>
+    <p>This is a common way of working in Eleventy and keeps things easy and convenient while working in folders to organize your pages and content.</p>
+  </div>
+  <div class="mt-12 pt-4 text-gray-600 text-sm border-t border-gray-300">
+    <p>
+      This page is part of the <a href="/blog">blog</a> section.
+    </p>
+  </div>
+</section>
+
+    </div>
+    
+    <script>function btnHandler(e,n){var t=document.querySelector(e);t&&t.addEventListener("click",function(e){e.preventDefault(),n()},!1)}btnHandler(".btn-log",function(){console.log("👋 Oh, hello there you!")});</script>
+  </body>
+</html>
+
+
+

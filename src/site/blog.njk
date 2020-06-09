@@ -1,0 +1,68 @@
+---
+title: Beacon Blog Index
+---
+
+
+
+<!-- Doctype etc. -->
+
+{% include "doctype.njk" %}
+
+<!-- Standard Navigation -->
+
+{% include "navigation-links.njk" %}
+
+<!-- New Mega Menu -->
+
+{% include "megamenu.njk" %}
+
+
+<!-- Breadcrumb -->
+
+{% include "breadcrumb-light.njk" %}
+
+<!-- Start blog Introduction -->
+
+
+
+<div class="relative max-w-screen-xl mx-auto pt-2 pb-20 px-4 sm:px-10 lg:pt-2 lg:pb-2 lg:px-10">
+<div class="relative lg:items-left text-left">
+<!-- Introduction para -->
+  <div class="text-left">
+
+        <h1 class="font-bold text-slate-500 xl: text-5xl lg:text-5xl md:text-5xl  text-5xl sm:text-3xl leading-tight sm:leading-none max-w-xl pt-8">
+          Scrapbook
+        </h1>
+        <p class="mt-3 max-w-2xl text-xl leading-7 text-slate-500 sm:mt-4 sm:pt-4">
+          Keep in the loop with our blog about digital and upcoming events...
+        </p>
+  </div>
+</div> 
+
+</div>
+  
+
+<!-- Post block container -->
+
+
+<div class="relative mx-auto max-w-screen-xl lg:px-10">
+<div class="mt-12 grid gap-5 mx-auto md:grid-cols-2 lg:grid-cols-3 lg:max-w-none lg:row-gap-12 pb-32">
+
+
+<!-- Post cards row of 3 -->
+
+{% include "components/post-teaser.njk" %}
+
+{% include "components/post-teaser.njk" %}
+
+</div>
+  </div>
+
+<!-- Call to action block -->
+
+{% include "components/call-to-action.njk" %}
+
+
+
+
+{% include "footer.njk" %}

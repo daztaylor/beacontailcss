@@ -1,0 +1,29 @@
+{
+  "name": "beacon",
+  "version": "1.0.0",
+  "description": "Beacon tailwind 2020 version",
+  "main": "index.js",
+  "scripts": {
+    "build": "postcss css/tailwind.css -o public/build/tailwind.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/ui": "^0.1.4",
+    "autoprefixer": "^9.7.4",
+    "postcss-cli": "^7.1.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "tailwindcss": "^1.4.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daztaylor/beacontailcss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daztaylor/beacontailcss/issues"
+  },
+  "homepage": "https://github.com/daztaylor/beacontailcss#readme"
+}

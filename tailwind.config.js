@@ -1,8 +1,8 @@
 module.exports = {
   theme: {
     fontFamily: {
-      body: ['"Muli"', 'sans-serif'],
-      muli: ['"Muli"', 'sans-serif'],
+      body: ['"Source Sans Pro"', 'sans-serif'],
+      muli: ['"Source Sans Pro"', 'sans-serif'],
    },  
     extend: {
       colors: {
@@ -60,10 +60,15 @@ module.exports = {
           700: '#913B14',
           800: '#6D2D0F',
           900: '#491E0A',
-          },                             
+          }, 
+        'greyscale': {
+            100: '#f9f9fb',
+          }                            
       }
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/ui'),
+  ],
 }
